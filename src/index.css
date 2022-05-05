@@ -1,13 +1,249 @@
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  background-color: #616161;
+  font-size: 22px;
+  font-family: "oxygen";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  margin-left: 15px;
+  margin-right: 5px;
+}
+.container__application {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.application__background {
+  z-index: 1;
+  width: 900px;
+  height: 880px;
+  position: absolute;
+  border: 2px solid black;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.wildyImg {
+  width: 900px;
+  border-radius: 30px;
+  height: auto;
+  z-index: 0;
+  position: absolute;
+}
+.container__application > canvas {
+  z-index: 2;
+  border: 1px solid black;
+}
+
+.maximizedMap {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction:column;
+  background-color: #616161;
+  z-index: 1000;
+  position: absolute;
+  width: 100%;
+  height: auto;
+}
+.maximizedMap > button {
+  z-index: 50;
+  width: 250px;
+  position: sticky;
+  top: 10px;
+  border: 3px solid black;
+  cursor: pointer;
+  background: #283593;
+  font-weight: 700;
+  font-size: 24px;
+  color: white;
+  box-shadow: 0px 3.2px 7.68px rgba(0, 0, 0, 0.18);
+  border-radius: 3.81277px;
+  text-align: center;
+  line-height: 40px;
+}
+
+.left__container {
+  border: 2px solid black;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 600px;
+  background-color: #1a227e85;
+  height: 100%;
+}
+.left__container > button {
+  margin-top: 20px;
+  border: 3px solid black;
+  cursor: pointer;
+  background: #283593;
+  font-weight: 700;
+  font-size: 24px;
+  color: white;
+  box-shadow: 0px 3.2px 7.68px rgba(0, 0, 0, 0.18);
+  border-radius: 3.81277px;
+  text-align: center;
+  line-height: 40px;
+}
+.form__container {
+  width: 100%;
+  background-color:rgba(255, 255, 255, 0.212);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form__tabs {
+  border-bottom: 5px solid black;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.589);
+  justify-content: center;
+  display: flex;
+}
+.form__tabs--tab {
+  cursor: pointer;
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 5px 0px 5px;
+  font-size: 30px;
+  background-color: #1a227e;
+  color: white;
+  padding: 3px 10px 3px 10px;
+}
+.form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+  margin-bottom: 20px;
+}
+.form > * {
+  margin-top: 8px;
+  border: 1px solid black;
+}
+.form__worldInput {
+  font-family: "oxygen";
+  text-align: center;
+  font-weight: 700;
+  height: 50px;
+  width: 90%;
+  color: black;
+  font-size: 40px;
+  border-radius: 5px;
+  margin-top: 5px;
+  border: 3px solid #283593;
+}
+.form__worldInput::placeholder {
+  color: black;
+}
+.form > button {
+  border: 3px solid black;
+  cursor: pointer;
+  background: #283593;
+  font-weight: 700;
+  font-size: 24px;
+  color: white;
+  box-shadow: 0px 3.2px 7.68px rgba(0, 0, 0, 0.18);
+  border-radius: 3.81277px;
+  text-align: center;
+  line-height: 40px;
+}
+::-webkit-scrollbar {
+  background-color: gray;
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: black;
+}
+.form__worlds {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  background-color: #616161;
+}
+.form__worlds__world {
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  width: 200px;
+  font-size: 20px;
+  background-color: #283593;
+  padding: 5px 0px 5px 0px;
+  margin-top: 6px;
+  border: 4px solid black;
+  border-radius: 50px;
+}
+.form__combatInput {
+  font-family: "oxygen";
+  text-align: center;
+  font-weight: 700;
+  height: 50px;
+  width: 90%;
+  color: black;
+  font-size: 40px;
+  border-radius: 5px;
+  margin-top: 5px;
+  border: 3px solid #283593;
+}
+.form__combatInput::placeholder {
+  color: black;
+}
+.form > button {
+  border: 3px solid black;
+  cursor: pointer;
+  background: #283593;
+  font-weight: 700;
+  font-size: 24px;
+  color: white;
+  box-shadow: 0px 3.2px 7.68px rgba(0, 0, 0, 0.18);
+  border-radius: 3.81277px;
+  text-align: center;
+  line-height: 40px;
+}
+::-webkit-scrollbar {
+  background-color: gray;
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: black;
+}
+.form__combatbrackets {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  background-color: #616161;
+}
+.form__combatbrackets__bracket {
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  width: 300px;
+  font-size: 20px;
+  background-color: #283593;
+  padding: 5px 0px 5px 0px;
+  margin-top: 6px;
+  border: 4px solid black;
+  border-radius: 50px;
 }
