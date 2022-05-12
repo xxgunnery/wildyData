@@ -3,7 +3,7 @@ const app = express();
 const fs = require('fs')
 const papa = require('papaparse')
 
-let playerData = fs.readFileSync('./src/playerdata.csv', "utf-8")
+let playerData = fs.readFileSync('C:/Users/xxgun/Documents/pdantonio/Java/RuneLite/playerdata.csv', "utf-8")
 playerData = papa.parse(playerData)
 
 const port = process.env.PORT || 5000;
